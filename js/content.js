@@ -27,19 +27,6 @@
 	if ($("head:contains('miwifi.com')").length > 0) good = 5;
 
 	if (good >= 1) {
-	//Попап поддержки
-	chrome.storage.local.get("payAlert", function(results) {
-		payAlert = results.payAlert;
-		if (!payAlert) payAlert = "open";
-		if (payAlert != "close") {
-			$("#doc").append("<div class='patreonPay'>Поддержи плагин RUMIWIFI финансово: <a href='https://www.patreon.com/rumiwifi' target='_blank' title='Страница Patreon'>Копим на роутер</a>. Или морально: <a href='https://chrome.google.com/webstore/detail/rumiwifi/mbiehbednoakmhlmjcpgpciocekdjabp/reviews' title='Поставить 5 звезд' target='_blank'>Поставь плагину 5 звезд</a><span class='pClose'>×</span></div>");
-			$(".pClose").on("click", function() {
-				chrome.storage.local.set({"payAlert":"close"});
-				$(".patreonPay").fadeOut("slow");
-			});
-		}
-	});
-		
 	//Язык
 	chrome.storage.local.get("rumiLang", function(results) {
 		lang = results.rumiLang;
@@ -368,22 +355,6 @@
 		});
 		
 	});
-	
-	//Facebook чат
-		chrome.storage.local.get("extensionMode",function (results){
-			var mode = results.extensionMode;
-			if (mode != 0) {
-				(function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.9&appId=797768023732660";
-				fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-				
-				$("#ft").append('<div style="background: #FFF;border-radius: 10px;padding: 20px;width: 1120px;margin: 0 auto;margin-top: 50px;margin-bottom:50px;"><h1 style="text-align: center;margin: 0 0 20px 0px;font-family: Segoe UI, Arial;font-size: 22px;color: #FFF;background: #1782dd;padding: 10px;border-radius: 5px;">Чат RUMIWIFI</h1><p>В этом чате Вы можете задать любой вопрос, или помочь улучшить перевод RUMIWIFI. На некоторых страницах чат может не загружаться.</p><div class="fb-comments" data-order-by="reverse_time" data-href="http://miwifi.com/cgi-bin/luci/web" data-width="100%" data-numposts="10"></div></div>');
-			}
-		});
 		
 		//Меняем заголовок
 		$('title').text('RUMIWIFI');

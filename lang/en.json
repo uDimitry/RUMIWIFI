@@ -392,4 +392,6 @@
 "重启中...":"Reset...",
 "...查询中":"Processing...",
 "5G 选项":"5G setting",
-"已连接":"connected"}
+"已连接":"connected",
+"连接设备数量":"Clients connected:"
+}
