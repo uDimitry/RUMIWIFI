@@ -20,7 +20,7 @@
 	"content_scripts": [ {
 		"all_frames": true,
 		"css": ["styles.css"],
-		"js": [ "js/jquery.js","js/content.js"],
+		"js": [ "js/jquery.js","js/content.js", "js/dynamic_content.js"],
 		"matches": [ "<all_urls>" ] 
 	} ],
 	"browser_action": {
