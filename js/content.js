@@ -58,7 +58,7 @@
 			function replaceInterval() {
 				var x = 0;
 				translateInterval = setInterval(function() {
-					if (++x === 1) {
+					if (++x === 4) {
 						//Остановка репиттера
 						clearInterval(translateInterval);
 					}
